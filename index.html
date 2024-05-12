@@ -4,15 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Black Jack</title>
+    <style>
+        #output{
+            font-size: 1.5em;
+        }
+    </style>
 </head>
 <body>
+    <div id="output">
+
+    </div>
     <script>
         let cards =[];
        const suits = ["spades","hearts","clubs","diams"];
        let numb = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
+       let output = document.getElementById("output")
+
 
         for (s in suits){
-            for(n in numb){ console.log(suits[s]+numb[n]); }   
+            for(n in numb)
+            { 
+               output.innerHTML += "&"+suits[s] +";"+numb[n]+ " ";
+
+             }   
+        }
+            
            let randomNum = Math.floor((Math.random()*52)+1);
          
         </script>
