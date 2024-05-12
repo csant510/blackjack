@@ -7,9 +7,14 @@
 </head>
 <body>
     <script>
-    
-        var randomNum = Math.floor((Math.random()*52)+1);
-        console.log(randomNum)
+        let cards =[];
+       const suits = ["spades","hearts","clubs","diams"];
+       let numb = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
+
+        for (s in suits){
+            for(n in numb){ console.log(suits[s]+numb[n]); }   
+           let randomNum = Math.floor((Math.random()*52)+1);
+         
         </script>
 </body>
 </html>
