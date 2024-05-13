@@ -31,12 +31,26 @@
         let suit = suits[s][0].toUpperCase();
         let bgcolor = (suit == "S" || suit == "C") ? "black" : "red"; 
         for (n in numb) {
-        output.innerHTML += "<span style='color:" + bgcolor + "'>&" + suits[s] + ";" + numb[n] + "</span> ";
-                                  }
-                                }   
-            
+            let cardvalue = (n>9) ? 10 : parseInt(n)+1
+            let card ={
+                suit:suit,
+                icon:suits[s],
+                bgcolor:bgcolor,
+                cardnum:numb[n],
+                cardvalue:cardvalue
+            }
+            cards.push(card);
+            }
+        //output.innerHTML += "<span style='color:" + bgcolor + "'>&" + suits[s] + ";" + numb[n] + "</span> ";
+        }
+                                   
+            console.log(cards);
+            function randomCard(){
            let randomNum = Math.floor((Math.random()*52)+1);
-         
+           output.innerHTML += "<span style='color:" + cards[randomNum].bgcolor + "'>&" + cards[randomNum].icon + ";"
+             + cards[randomNum].cardnum + "</span>  ";
+           }
+        randomCard();
         </script>
 </body>
 </html>
