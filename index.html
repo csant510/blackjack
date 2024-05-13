@@ -23,7 +23,7 @@
 <div>
     <div id="message">Press Start Button</div>
     <div id="start">
-        <button id="ButtonStart" type="button" onclick="Start()"
+        <button id="btnstart" type="button" onclick="Start()"
         class="btn">Start Game</button>
     </div>
 
@@ -55,11 +55,32 @@
                                    
             console.log(cards);
             function Start(){
-           let randomNum = Math.floor((Math.random()*52)+1);
-           output.innerHTML += "<span style='color:" + cards[randomNum].bgcolor + "'>&" + cards[randomNum].icon + ";"
-             + cards[randomNum].cardnum + "</span>  ";
-           }
-        //randomCard();
+                outputCard();
+                shuffleDeck(cards);
+                outputCard();
+            
+          // let randomNum = Math.floor((Math.random()*52)+1);
+            }
+
+            function shuffleDeck(array) {
+                for( let i = array.length -1; i >0 ; i--){
+                    let j  = Math.floor(Math.random()  * (i+1));
+                    let temp = array[i]
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+                return array
+               }
+        
+           
+            
+        
+
+           function outputCard(){
+                output.innerHTML += "<span style='color:" + cards[0].bgcolor + "'>" + cards[0].cardnum + "&" + cards[0].icon + ";</span>  "
+            }
+           
+
         </script>
 </body>
 </html>
